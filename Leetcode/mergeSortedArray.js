@@ -31,7 +31,8 @@ var merge = function (nums1, m, nums2, n) {
     }
 };
 
-
+merge(nums1, m, nums2, n);
+console.log(nums1);
 
 /*
 88. Merge Sorted Array
