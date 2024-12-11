@@ -1,24 +1,24 @@
-function merge(nums1, m, nums2, n) {
-    // Combine the first m elements of nums1 with all elements of nums2
-    let combined = nums1.slice(0, m).concat(nums2);
+// function merge(nums1, m, nums2, n) {
+//     // Combine the first m elements of nums1 with all elements of nums2
+//     let combined = nums1.slice(0, m).concat(nums2.slice(0, n));
 
-    // Sort the combined array
-    combined.sort((a, b) => a - b);
+//     // Sort the combined array
+//     combined.sort((a, b) => a - b);
 
-    // Copy the sorted elements back into nums1
-    for (let i = 0; i < combined.length; i++) {
-        nums1[i] = combined[i];
-    }
-};
+//     // Copy the sorted elements back into nums1
+//     for (let i = 0; i < combined.length; i++) {
+//         nums1[i] = combined[i];
+//     }
+// };
 
-// Input arrays and paramters
-let nums1 = [1, 2, 3, 0, 0, 0];
-let m = 3;
-let nums2 = [2, 3, 5, 6]
-let n = 4;
+// // Input arrays and paramters
+// let nums1 = [1, 2, 3, 0, 0, 0];
+// let m = 3;
+// let nums2 = [2, 3, 5, 6]
+// let n = 4;
 
-merge(nums1, m, nums2, n)
-console.log(nums1);
+// merge(nums1, m, nums2, n)
+// console.log(nums1);
 
 
 
@@ -45,8 +45,9 @@ console.log(nums1);
 //     combined.sort((a, b) => a-b)
 
 //     // make nums1 same as new array
-
-//     return combined;
+//     for (i = 0; i < combined.length; i++) {
+//         nums1[i] = combined[i]
+//     }
 // }
 
 // // Input arrays and paramters
@@ -55,7 +56,49 @@ console.log(nums1);
 // let nums2 = [2, 3, 5, 6]
 // let n = 4;
 
-// console.log(merge(nums1, m, nums2, n));
+// merge(nums1, m, nums2, n);
+// console.log(nums1);
+
+
+
+
+
+
+var merge = function(nums1, m, nums2, n) {
+    // slice the two arrays and put them together in a new array
+    let combinedArray = nums1.slice(0, m).concat(nums2.slice(0, n));
+
+    // sort new array
+    combinedArray.sort((a, b) => a - b);
+
+    // copy the sorted elements into nums1
+    for (i = 0; i < combinedArray.length; i++) {
+        nums1[i] = combinedArray[i]
+    }
+};
+
+
+let nums1 = [1,2,3,0,0,0];
+let m = 3; 
+let nums2 = [2,5,6];
+let n = 3;
+
+merge(nums1, m, nums2, n);
+console.log(nums1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
