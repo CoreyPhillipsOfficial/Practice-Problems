@@ -1,3 +1,38 @@
+function merge(nums1, m, nums2, n) {
+    // Pointers for nums1, nums2, and the end of nums1
+    let p1 = m - 1; // Last valid element in nums1
+    let p2 = n - 1; // Last element in nums2
+    let p = m + n - 1; // Last position in nums1
+
+    // Merge nums1 and nums2 from the end
+    while (p1 >= 0 && p2 >= 0) {
+        if (nums1[p1] > nums2[p2]) {
+            nums1[p] = nums1[p1];
+            p1--;
+        } else {
+            nums1[p] = nums2[p2];
+            p2--;
+        }
+        p--;
+    }
+
+    // If there are remaining elements in nums2, copy them
+    while (p2 >= 0) {
+        nums1[p] = nums2[p2];
+        p2--;
+        p--;
+    }
+}
+
+
+
+
+
+
+
+
+
+// // Simple solution
 // function merge(nums1, m, nums2, n) {
 //     // Combine the first m elements of nums1 with all elements of nums2
 //     let combined = nums1.slice(0, m).concat(nums2.slice(0, n));
@@ -64,27 +99,26 @@
 
 
 
-var merge = function(nums1, m, nums2, n) {
-    // slice the two arrays and put them together in a new array
-    let combinedArray = nums1.slice(0, m).concat(nums2.slice(0, n));
+// var merge = function(nums1, m, nums2, n) {
+//     // slice the two arrays and put them together in a new array
+//     let combinedArray = nums1.slice(0, m).concat(nums2.slice(0, n));
 
-    // sort new array
-    combinedArray.sort((a, b) => a - b);
+//     // sort new array
+//     combinedArray.sort((a, b) => a - b);
 
-    // copy the sorted elements into nums1
-    for (i = 0; i < combinedArray.length; i++) {
-        nums1[i] = combinedArray[i]
-    }
-};
+//     // copy the sorted elements into nums1
+//     for (i = 0; i < combinedArray.length; i++) {
+//         nums1[i] = combinedArray[i]
+//     }
+// };
 
+// let nums1 = [1,2,3,0,0,0];
+// let m = 3; 
+// let nums2 = [2,5,6];
+// let n = 3;
 
-let nums1 = [1,2,3,0,0,0];
-let m = 3; 
-let nums2 = [2,5,6];
-let n = 3;
-
-merge(nums1, m, nums2, n);
-console.log(nums1);
+// merge(nums1, m, nums2, n);
+// console.log(nums1);
 
 
 
