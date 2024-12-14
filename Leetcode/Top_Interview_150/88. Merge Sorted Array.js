@@ -1,3 +1,4 @@
+// O(m + n) run time
 function merge(nums1, m, nums2, n) {
     // Pointers for nums1, nums2, and the end of nums1
     let p1 = m - 1; // Last valid element in nums1
