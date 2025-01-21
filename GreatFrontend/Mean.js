@@ -43,6 +43,8 @@ export function mean(array) {
 console.log(mean([4, 2, 8, 6]));
 
 
+
+
 // More efficient way
 export function mean2(array) {
     // Return NaN if the array is empty
