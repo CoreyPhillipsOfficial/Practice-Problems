@@ -20,7 +20,7 @@ mean([]); // => NaN
  * @param {Array} array - Array from which the elements are all numbers.
  * @return {Number} Returns mean.
  */
-export default function mean(array) {
+export function mean(array) {
     // Return NaN if the array is empty
     if (array.length === 0) {
         return NaN;
@@ -41,3 +41,18 @@ export default function mean(array) {
 }
 
 console.log(mean([4, 2, 8, 6]));
+
+
+// More efficient way
+export function mean2(array) {
+    // Return NaN if the array is empty
+    if (array.length === 0) {
+        return NaN;
+    }
+
+    // Use reduce to calculate the sum and then divide by the length
+    const sum = array.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    return sum / array.length;
+}
+
+console.log(mean2([4, 2, 8, 6]));
