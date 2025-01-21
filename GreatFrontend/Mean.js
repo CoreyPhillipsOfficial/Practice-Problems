@@ -26,15 +26,18 @@ export default function mean(array) {
         return NaN;
     }
 
-    // loop through array to multiply numbers together
+    // Initialize sum
+    let sum = 0;
+
+    // Loop through the array to sum the numbers
     for (let i = 0; i < array.length; i++) {
-        result *= array[i]
+        sum += array[i];
     }
 
-    // divide result by array length + 1
-    let number = result / (array.length + 1)
+    // Calculate mean by dividing sum by the number of elements
+    let meanOfArray = sum / array.length
 
-    return number
+    return meanOfArray
 }
 
 console.log(mean([4, 2, 8, 6]));
