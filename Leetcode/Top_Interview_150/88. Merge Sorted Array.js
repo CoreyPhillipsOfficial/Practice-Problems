@@ -149,3 +149,31 @@ function merge(nums1, m, nums2, n) {
 // let letterArray = ['w', 'b', 'r', 'h', 'a']
 
 // console.log(letterArray.sort());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let name = 'spillihP yeroC'
+
+function reverseName(name) {
+    if (name === '') {
+        return '';
+    } else {
+        return name[name.length - 1] + reverseName(name.slice(0, -1));
+    }
+}
+
+console.log(reverseName(name));
