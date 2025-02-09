@@ -14,4 +14,5 @@ function getTotal(...args) {
     }
 }
 
+// Log-
 console.log(getTotal(2, 3, 4, 5)(4, 5, 6)); // Output: 29
